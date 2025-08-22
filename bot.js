@@ -5,6 +5,7 @@ import { aiLabs } from './ailabscat.js'
 import { tempmail } from './TemBox.js'
 import LunaAI from './lunaai.video.js'
 import { instaTiktokDownloader } from './InstaTikTok Downloader (1).js'
+import { spotifyTrackDownloader } from './spotify downloader.js'
 
 class WhatsAppBot {
   constructor() {
@@ -413,8 +414,15 @@ Powered by Baileys • Created by @Dimasmaulana12`
     
     try {
       if (platform === 'spotify') {
-        // Handle Spotify download - would need to implement spotify downloader properly
-        await this.sock.sendMessage(jid, { text: '❌ Spotify downloader belum diimplementasi sepenuhnya' })
+        const result = await spotifyTrackDownloader(url)
+        if (result.status === 'success') {
+          await this.sock.sendMessage(jid, {
+            audio: { url: result.dlink },
+            caption: `✅ *Spotify Download Berhasil*\n\n🎵 Title: ${result.song_name}\n🎤 Artist: ${result.artist}\n💿 Album: ${result.album_name}\n⏱️ Duration: ${result.duration}\n\n💡 Download lagi? Kirim link Spotify yang baru`
+          })
+        } else {
+          await this.sock.sendMessage(jid, { text: '❌ Gagal download dari Spotify' })
+        }
         return
       }
 
