@@ -186,3 +186,5 @@ app
   });
 
 //Payload nya default bre 🗿
+
+export default LunaAI;
