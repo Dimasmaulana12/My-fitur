@@ -24,11 +24,13 @@ const spotifyTrackDownloader = async (spotifyTrackUrl) => {
     return result
 }
 
+/* // Commented out for import usage
 spotifyTrackDownloader("https://open.spotify.com/track/1ibeKVCiXORhvUpMmtsQWq")
 .then(console.log)
 .catch(e => {
     console.log('waduh ada error ' +e.message)
 })
+*/
 
 /* output
 {
@@ -45,3 +47,5 @@ spotifyTrackDownloader("https://open.spotify.com/track/1ibeKVCiXORhvUpMmtsQWq")
   released: '2004-10-12',
   album_name: 'Chuck'
 } */
+
+export { spotifyTrackDownloader };

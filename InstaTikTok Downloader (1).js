@@ -10,7 +10,7 @@
 
 import axios from 'axios'
 
-import cheerio from 'cheerio'
+import * as cheerio from 'cheerio'
 
 const SITE_URL = 'https://instatiktok.com/'
 

@@ -123,6 +123,7 @@ export async function sendGPTOSS(text, threadId = null, userId = null) {
 //Limit Per UserId 5x percobaan!!
 //Unlimited Jika tanpa UserId tapi gk bisa history chat!
 
+/* // Commented out for import usage
 const res = await sendGPTOSS("Hai nama aku fgsi", null);
 console.log(res);
 
@@ -137,3 +138,4 @@ console.log(res4);
 
 const res5 = await sendGPTOSS("keren", res.threadId, res.userId);
 console.log(res5);
+*/

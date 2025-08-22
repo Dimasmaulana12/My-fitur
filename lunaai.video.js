@@ -169,6 +169,7 @@ class LunaAI {
   }
 }
 
+/* // Commented out for import usage
 // Jalankan
 const app = new LunaAI();
 
@@ -184,5 +185,8 @@ app
   .catch((err) => {
     console.error("[🚨 Error]", err.message);
   });
+*/
 
 //Payload nya default bre 🗿
+
+export default LunaAI;
